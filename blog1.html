@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog about Cricket</title>
+    <link rel="stylesheet" href="blog1styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Blog about Cricket</h1>
+    </header>
+    
+    <section class="blog">
+        <div class="blog-container">
+            <div class="blog-content">
+                <div class="blog-box">
+                    <h2>Cricket: An Analogy to Life</h2>
+                    <p>
+                        Cricket, often called a gentleman's game, holds profound lessons analogous to life. Just like in cricket, life is a mix of 
+                        challenges, strategies, and moments of glory and defeat.
+                    </p>
+                    <p>
+                        In cricket, every player's role is crucial, just as every individual's role is significant in the journey of life. Whether you're 
+                        a batsman facing tough deliveries or a bowler striving for breakthroughs, the game teaches us perseverance and resilience.
+                    </p>
+                    <p>
+                        Like the ebb and flow of a cricket match, life presents its share of ups and downs. Learning to adapt to changing circumstances, 
+                        staying focused amidst distractions, and seizing opportunities are essential skills both on and off the cricket field.
+                    </p>
+                    <p>
+                        As cricket enthusiasts, we find solace and inspiration in the game, drawing parallels between the sport's intricacies and life's 
+                        complexities. Through cricket, we learn the values of teamwork, discipline, and sportsmanship, shaping us into better individuals.
+                    </p>
+                </div>
+            </div>
+            <div class="like-comment-section">
+                <div class="like-section">
+                    <button class="like-button" id="likeButton">Like</button>
+                    <span class="like-counter">0</span> Likes
+                </div>
+                <div class="comment-section">
+                    <h3>Comments</h3>
+                    <ul class="comments-list">
+                        <li class="comment">Great analogy! Cricket truly mirrors life's journey.</li>
+                    </ul>
+                    <form class="comment-form">
+                        <textarea placeholder="Add a comment..."></textarea>
+                        <button type="submit">Post</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Blog about Cricket by Vishak Kashyap K. All rights reserved.</p>
+    </footer>
+
+    <script>
+        if (!localStorage.getItem('likeCount')) {
+            localStorage.setItem('likeCount', '0');
+        }
+        document.querySelector('.like-counter').textContent = localStorage.getItem('likeCount');
+        document.querySelector('.like-button').addEventListener('click', function() {
+            let likeCount = parseInt(localStorage.getItem('likeCount'));
+            if (this.classList.contains('liked')){
+                likeCount--;
+                this.classList.remove('liked');
+            }
+            else{
+                likeCount++;
+                this.classList.add('liked');
+            }
+            document.querySelector('.like-counter').textContent = likeCount;
+            localStorage.setItem('likeCount', likeCount.toString());
+        });
+    </script>
+</body>
+</html>

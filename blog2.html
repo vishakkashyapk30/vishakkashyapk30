@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog about Cars</title>
+    <link rel="stylesheet" href="blog2styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Blog about Cars</h1>
+    </header>
+    
+    <section class="blog">
+        <div class="blog-container">
+            <div class="blog-content">
+                <div class="blog-box">
+                    <h2>Cars: Machines which make your heart race</h2>
+                    <p>
+                        Cars, especially those from renowned brands like Ferrari, Mercedes, McLaren, Bentley, Rolls Royce, and Porsche, epitomize the 
+                        perfect blend of luxury and performance. Each brand carries its own legacy and prestige, captivating enthusiasts worldwide.
+                    </p>
+                    <p>
+                        Ferrari, with its iconic prancing horse emblem, represents the pinnacle of Italian craftsmanship and speed. The roar of a 
+                        Ferrari engine ignites passion like no other, making it a dream for many to experience its adrenaline rush.
+                    </p>
+                    <p>
+                        Mercedes-Benz stands as a symbol of elegance and innovation. From luxurious sedans to powerful SUVs, Mercedes vehicles exude 
+                        sophistication and cutting-edge technology, setting new standards in the automotive industry.
+                    </p>
+                    <p>
+                        McLaren, known for its racing heritage, translates its expertise from the track to the road, producing high-performance 
+                        supercars that push the boundaries of speed and precision. Owning a McLaren is akin to possessing a piece of automotive 
+                        artistry.
+                    </p>
+                    <p>
+                        Bentley and Rolls Royce represent the epitome of luxury and refinement. These prestigious brands craft cars with meticulous 
+                        attention to detail, offering unparalleled comfort and opulence. Driving a Bentley or Rolls Royce is an experience reserved 
+                        for the discerning few.
+                    </p>
+                    <p>
+                        Porsche, famed for its iconic 911 sports car, embodies the thrill of driving. With a perfect balance of power and handling, 
+                        Porsche vehicles deliver exhilarating performance on both the road and the track, earning the loyalty of enthusiasts worldwide.
+                    </p>
+                    <p>
+                        These legendary car brands not only signify status and prestige but also reflect the artistry and engineering prowess of their 
+                        respective nations. From the streets of Monaco to the highways of California, these cars command attention and admiration 
+                        wherever they go, making them timeless symbols of automotive excellence.
+                    </p>
+                </div>
+            </div>
+            <div class="like-comment-section">
+                <div class="like-section">
+                    <button class="like-button" id="likeButtonCars" onclick="likeBlog('Cars')">Like</button>
+                    <span class="like-counter" id="likeCounterCars">0</span> Likes
+                </div>
+                <div class="comment-section">
+                    <!-- Comment section of the blog goes here -->
+                    <h3>Comments</h3>
+                    <ul class="comments-list">
+                        <li class="comment">Great article! These car brands truly represent the epitome of performance.</li>
+                    </ul>
+                    <form class="comment-form">
+                        <textarea placeholder="Add a comment..."></textarea>
+                        <button type="submit">Post</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Blog about Cars by Vishak Kashyap K. All rights reserved.</p>
+    </footer>
+
+    <script>
+        if (!localStorage.getItem('likeCountCars')) {
+            localStorage.setItem('likeCountCars', '0');
+        }
+        document.getElementById('likeCounterCars').textContent = localStorage.getItem('likeCountCars');
+
+        function likeBlog(blogType) {
+            let likeCount = parseInt(localStorage.getItem('likeCount' + blogType)) || 0;
+            const likeButton = document.getElementById('likeButton' + blogType);
+            if (likeButton.classList.contains('liked')){
+                likeCount--;
+                likeButton.classList.remove('liked');
+            } else {
+                likeCount++;
+                likeButton.classList.add('liked');
+            }
+            document.getElementById('likeCounter' + blogType).textContent = likeCount;
+            localStorage.setItem('likeCount' + blogType, likeCount.toString());
+        }
+    </script>
+</body>
+</html>

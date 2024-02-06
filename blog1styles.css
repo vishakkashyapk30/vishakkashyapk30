@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: whitesmoke;
+    color: #333;
+}
+
+.header {
+    background-color: #1d016e;
+    color: whitesmoke;
+    padding: 1.6rem 7%;
+}
+
+.blog {
+    padding: 5rem 7%;
+}
+
+.blog-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-content {
+    width: 100%;
+    max-width: 50rem;
+}
+
+.blog-box {
+    background-color: whitesmoke;
+    border-radius: 1rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+    padding: 3rem;
+    margin-top: 0.3rem;
+}
+
+.blog-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.blog-box p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.like-comment-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 50rem;
+    margin-top: 2rem;
+}
+
+.like-section,
+.comment-section {
+    width: 45%;
+}
+
+.like-button {
+    background-color: #1d016e;
+    color: whitesmoke;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.like-button:hover {
+    background-color: rgb(2, 97, 84);
+}
+
+.like-button.liked {
+    background-color: rgba(228, 9, 75, 0.945); /* Change color for liked state */
+}
+
+.like-counter {
+    font-size: 1rem;
+}
+
+.comment-section {
+    margin-left: 2%;
+}
+
+.comment-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.comments-list {
+    list-style: none;
+    padding: 0;
+}
+
+.comment {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.comment-form {
+    margin-top: 2rem;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid whitesmoke;
+    resize: none;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.comment-form button {
+    background-color: #1d016e;
+    color: whitesmoke;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-form button:hover {
+    background-color: rgb(2, 97, 84);
+}
+
+.footer {
+    background-color: #1d016e;
+    color: #fff;
+    padding: 2rem 7%;
+    margin-top: 5rem;
+}
